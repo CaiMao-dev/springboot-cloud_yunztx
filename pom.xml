@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.yunztx.parent</groupId>
+    <artifactId>yunztx</artifactId>
+    <!--项目版本-->
+    <version>1.0.2</version>
+    <!--子模块-->
+    <modules>
+        <module>yunztx_eureka</module>
+        <module>yunztx_zuul</module>
+        <module>yunztx_item</module>
+    </modules>
+    <!--打包方式-->
+    <packaging>pom</packaging>
+    <!--项目名称-->
+    <name>yunztx</name>
+    <description>Project for Spring Boot</description>
+
+    <!--添加父类工程坐标-->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.6.RELEASE</version>
+    </parent>
+
+    <!--版本统一管理-->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <!--Java JDK-->
+        <java.version>1.8</java.version>
+        <!--SpringCloud-->
+        <spring-cloud.version>Finchley.RC1</spring-cloud.version>
+        <!--Mybatis-->
+        <mybatis.starter.version>1.3.2</mybatis.starter.version>
+        <!--通用mapper-->
+        <mapper.starter.version>2.0.2</mapper.starter.version>
+        <!--Druid连接池-->
+        <druid.starter.version>1.1.9</druid.starter.version>
+        <!--Mysql数据库-->
+        <mysql.version>5.1.32</mysql.version>
+        <!--Mybatis分页助手-->
+        <pageHelper.starter.version>1.2.3</pageHelper.starter.version>
+        <!--FastDFS文件管理-->
+        <fastDFS.client.version>1.26.1-RELEASE</fastDFS.client.version>
+    </properties>
+
+    <!--可选依赖-->
+    <dependencyManagement>
+        <dependencies>
+
+            <!-- mybatis启动器 -->
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis.starter.version}</version>
+            </dependency>
+
+            <!-- 通用Mapper启动器 -->
+            <dependency>
+                <groupId>tk.mybatis</groupId>
+                <artifactId>mapper-spring-boot-starter</artifactId>
+                <version>${mapper.starter.version}</version>
+            </dependency>
+
+            <!-- springCloud -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- 分页助手启动器 -->
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>${pageHelper.starter.version}</version>
+            </dependency>
+
+            <!--mysql驱动-->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+
+            <!--FastDFS客户端-->
+            <dependency>
+                <groupId>com.github.tobato</groupId>
+                <artifactId>fastdfs-client</artifactId>
+                <version>${fastDFS.client.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <!--通用依赖-->
+    <dependencies>
+
+        <!--StringUtils工具-->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.4</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+
+            <!--构建工具-->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+
+        </plugins>
+    </build>
+
+    <repositories>
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+    
+</project>

@@ -1,0 +1,27 @@
+#服务配置
+server:
+  #端口配置
+  port: 10086
+
+#框架配置
+spring:
+  #应用配置
+  application:
+    #当前服务的名称
+    name: yunztx_eureka
+
+#注册中心配置
+eureka:
+  #客户端
+  client:
+    #不从服务端获取注册信息
+    fetch-registry: false
+    #不注册到服务端
+    register-with-eureka: false
+    #设置服务端的url
+    service-url:
+      defaultZone: http://127.0.0.1:${server.port}/eureka
+  #服务端
+  server:
+    #关闭自我保护
+    enable-self-preservation: false
