@@ -12,6 +12,7 @@
         <module>yunztx_eureka</module>
         <module>yunztx_zuul</module>
         <module>yunztx_item</module>
+        <module>yunztx_common</module>
     </modules>
     <!--打包方式-->
     <packaging>pom</packaging>
@@ -107,6 +108,12 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>3.4</version>
+        </dependency>
+
+        <!--是springboot提供的微服务检测接口，默认对外提供几个接口：/info-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
     </dependencies>

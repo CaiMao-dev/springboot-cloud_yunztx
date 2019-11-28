@@ -1,5 +1,6 @@
 server:
   port: 8081
+
 spring:
   application:
     name: yunztx-item-service
@@ -7,13 +8,17 @@ spring:
     url: jdbc:mysql://localhost:3306/crm
     username: root
     password: root
+
 eureka:
   client:
-    service-url:
+    serviceUrl:
       defaultZone: http://127.0.0.1:10086/eureka
   instance:
-    lease-renewal-interval-in-seconds: 5 # 每隔5秒发送一次心跳
-    lease-expiration-duration-in-seconds: 10 # 10秒不发送就过期
+    # 每隔5秒发送一次心跳
+    lease-renewal-interval-in-seconds: 5
+    # 10秒不发送就过期
+    lease-expiration-duration-in-seconds: 10
+    # 将IP注册到Eureka Server
     prefer-ip-address: true
     ip-address: 127.0.0.1
     instance-id: ${spring.application.name}:${server.port}
